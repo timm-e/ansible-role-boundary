@@ -37,6 +37,13 @@ worker {
   }
 }
 
+# prometheus metrics
+listener "tcp" {
+  address = "{{ boundary_address }}:9204"
+  purpose = "ops"
+  tls_disable = true
+}
+
 kms "{{ boundary_kms_type }}" {
   purpose = "worker-auth"
 {% for param, value in boundary_kms['worker-auth'].items() %}

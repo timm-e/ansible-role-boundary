@@ -64,6 +64,13 @@ listener "tcp" {
 {% endfor %}
 }
 
+# prometheus metrics endpoint
+listener "tcp" {
+  address = "{{ boundary_address }}:9203"
+  purpose = "ops"
+  tls_disable = true
+}
+
 {% for purpose in ['root', 'worker-auth', 'recovery'] %}
 kms "{{ boundary_kms_type }}" {
   purpose = "{{ purpose }}"

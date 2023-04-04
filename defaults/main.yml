@@ -59,7 +59,7 @@ boundary_checksum_file_url: "{{ boundary_url }}/{{ boundary_version }}/{{ bounda
 # KMS Configuration - default to Hashicorp dev build keys
 #  only suitable for learning, as documented at https://www.boundaryproject.io/docs/configuration/kms/aead
 boundary_kms_type: 'aead'
-boundary_kmsk:
+boundary_kms:
   root:
     aead_type: 'aes-gcm'
     key_id: 'global_root'
