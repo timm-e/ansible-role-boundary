@@ -1,5 +1,5 @@
 listener "tcp" {
-  address = "{{ boundary_address }}:9202"
+  address = "0.0.0.0:9202"
   purpose = "proxy"
 {% for option, value in boundary_worker_listener_parameters.items() %}
   {{ option }} = "{{ value }}"
