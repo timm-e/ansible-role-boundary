@@ -15,16 +15,16 @@ controller {
 }
 
 # localhost API listener
-listener "tcp" {
-  address = "127.0.0.1:9200"
-  purpose = "api"
-  tls_disable = true
-}
+#listener "tcp" {
+#  address = "127.0.0.1:9200"
+#  purpose = "api"
+#  tls_disable = true
+#}
 
 # Public API listener configuration blocks
 listener "tcp" {
   # Should be the address of the NIC that the controller server will be reached on
-  address = "{{ boundary_address }}:9200"
+  # address = "{{ boundary_address }}:9200"
   # The purpose of this listener block
   purpose = "api"
 
